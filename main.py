@@ -37,7 +37,7 @@ data = pd.read_csv("processed.cleveland.data", header=1)
 pd.set_option('display.max_columns', None)
 
 # 2. print the data before updating the columns
-print(data.head())
+print(data.head(), "\n")
 
 # 3. change the numbers to actual column names in the data
 data.columns = ['age',
@@ -56,8 +56,18 @@ data.columns = ['age',
               'hd']
 
 # print the data after updating the columns
-print(data.head())
+print(data.head(), "\n")
 
 # 4. determine the datatype of each column
-print(data.dtypes)
+print(data.dtypes, "\n")
 
+# 5. print out unique values for each float64 column
+column_values = data[["age", "sex", "cp", "restbp", "chol", "fbs",
+                      "restecg", "thalach", "exang", "oldpeak", "slope"]].values.ravel()
+unique_values =  pd.unique(column_values)
+print("float64 columns: ", unique_values, "\n")
+
+# print out unique values for ca, thal, and hd columns
+print("ca column unique vals: ", data['ca'].unique())
+print("thal column unique vals: ", data['thal'].unique())
+print("hd column unique vals: ", data['hd'].unique())
