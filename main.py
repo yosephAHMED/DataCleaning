@@ -15,3 +15,17 @@ Github repo:
     https://github.com/yosephAHMED/DataCleaning
 """
 
+import pandas as pd
+
+# Import the modules needed
+import numpy as np # data manipulation
+import matplotlib.pyplot as plt # matplotlib is for drawing graphs
+import matplotlib.colors as colors
+from sklearn.utils import resample # downsample the dataset
+from sklearn.model_selection import train_test_split # split data into training and testing sets
+from sklearn.preprocessing import scale # scale and center data
+from sklearn.svm import SVC # this will make a support vector machine for classificaiton
+from sklearn.model_selection import GridSearchCV # this will do cross validation
+from sklearn.metrics import confusion_matrix # this creates a confusion matrix
+from sklearn.metrics import plot_confusion_matrix # draws a confusion matrix
+from sklearn.decomposition import PCA # to perform PCA to plot the data
