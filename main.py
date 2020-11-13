@@ -30,16 +30,16 @@ from sklearn.metrics import confusion_matrix # this creates a confusion matrix
 from sklearn.metrics import plot_confusion_matrix # draws a confusion matrix
 from sklearn.decomposition import PCA # to perform PCA to plot the data
 
-# set up the panda data frame
+# 1. set up the panda data frame
 data = pd.read_csv("processed.cleveland.data", header=1)
 
 # show all columns so that none are abbreviated
 pd.set_option('display.max_columns', None)
 
-# print the data before updating the columns
+# 2. print the data before updating the columns
 print(data.head())
 
-# change the numbers to actual column names in the data
+# 3. change the numbers to actual column names in the data
 data.columns = ['age',
               'sex',
               'cp',
@@ -57,3 +57,7 @@ data.columns = ['age',
 
 # print the data after updating the columns
 print(data.head())
+
+# 4. determine the datatype of each column
+print(data.dtypes)
+
