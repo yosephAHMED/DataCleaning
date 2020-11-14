@@ -70,4 +70,19 @@ print("float64 columns: ", unique_values, "\n")
 # print out unique values for ca, thal, and hd columns
 print("ca column unique vals: ", data['ca'].unique())
 print("thal column unique vals: ", data['thal'].unique())
-print("hd column unique vals: ", data['hd'].unique())
+print("hd column unique vals: ", data['hd'].unique(), "\n")
+
+# 8. we see that ca and thal columns contain values that are question marks
+# we can determine the number of rows that have question marks via
+print("num rows missing data: ", len(data.loc[(data['ca'] == '?') | (data['thal'] == '?')]), "\n")
+# output: 6 rows of missing data
+
+# observing the rows that are missing data values
+print("rows missing data\n", data.loc[(data['ca'] == '?') | (data['thal'] == '?')])
+
+
+
+
+
+
+
