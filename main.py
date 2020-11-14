@@ -80,6 +80,23 @@ print("num rows missing data: ", len(data.loc[(data['ca'] == '?') | (data['thal'
 # observing the rows that are missing data values
 print("rows missing data\n", data.loc[(data['ca'] == '?') | (data['thal'] == '?')])
 
+# 10. count the number of rows in the full dataset
+print("\nnumber of rows in full dataset: ", len(data))
+
+# 11. remove the rows with missing values
+data_no_missing = data.loc[(data['ca'] != '?') & (data['thal'] != '?')]
+
+# 12. verify that you removed the rows by printing the size of the dataset
+print("\nnumber of rows in new dataset: ", len(data_no_missing))
+
+# 13. verify using the unique function that "ca" and "thal" do not have missing values
+print("\nunique values for ca\n")
+print(data_no_missing['ca'].unique())
+print("\nunique values for thal\n")
+print(data_no_missing['thal'].unique())
+
+
+
 
 
 
