@@ -95,6 +95,18 @@ print(data_no_missing['ca'].unique())
 print("\nunique values for thal\n")
 print(data_no_missing['thal'].unique())
 
+# 14. split the data into dependent and independent variables
+# we want to predicty if a patient has heart disease or not, so 'hd' is the data (our y) that we want to predict
+# therefore we drop 'hd' from the classifications (our X values)
+X = data_no_missing.drop('hd', axis=1).copy() 
+
+# 'hd' is what we want to predict (the y)
+y = data_no_missing['hd'].copy()
+
+# 15. print X and y dataframes
+print("\nX.head()\n", X.head())
+print("\ny.head()\n", y.head())
+
 
 
 
