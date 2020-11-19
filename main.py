@@ -4,7 +4,7 @@ Created on Fri Nov 13 00:53:07 2020
 
 @authors: 
     Ahmed, Yoseph
-    Dropp, Nicholas
+    Giasi, Nicholas
     Fernando, Nattandige
     
 Project:
