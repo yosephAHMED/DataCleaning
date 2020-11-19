@@ -107,6 +107,28 @@ y = data_no_missing['hd'].copy()
 print("\nX.head()\n", X.head())
 print("\ny.head()\n", y.head())
 
+# 16. verify categorical data
+print("sex column unique vals: ", data_no_missing['sex'].unique())
+print("cp column unique vals: ", data_no_missing['cp'].unique())
+print("fbs column unique vals: ", data_no_missing['fbs'].unique())
+
+print("restecg column unique vals: ", data_no_missing['restecg'].unique())
+
+print("exang column unique vals: ", data_no_missing['exang'].unique())
+print("slope column unique vals: ", data_no_missing['slope'].unique())
+print("thal column unique vals: ", data_no_missing['thal'].unique())
+# output for restecg was 2, 0, 1 but we are supposed to have 1, 2, or 3
+# restecg is the only column that needs to be corrected
+
+X_encoded = pd.get_dummies(X, columns=['cp', 'restecg', 'slope', 'thal'])
+print("\nX_encoded.head():\n", X_encoded.head())
+
+# 17
+print("\ny.unique(): ", y.unique())
+y_not_zero_idx = y > 0
+y[y_not_zero_idx] = 1
+print("\ny.unique(): ", y.unique())
+
 
 
 
